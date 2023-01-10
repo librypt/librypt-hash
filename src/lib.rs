@@ -15,7 +15,7 @@ pub trait HashFn<const BLOCK_SIZE: usize, const OUTPUT_SIZE: usize>: Sized {
     /// Produces the final hash value, resetting the hash state for reuse.
     fn finalize_reset(&mut self) -> Hash<OUTPUT_SIZE>;
 
-    /// Compute the has for the given message.
+    /// Compute the hash for the given message.
     fn hash(msg: &[u8]) -> Hash<OUTPUT_SIZE> {
         let mut hasher = Self::new();
 
